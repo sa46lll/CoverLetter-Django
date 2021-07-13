@@ -3,5 +3,8 @@ from django.shortcuts import render
 
 
 # Create your views here.
-def index(request):
-    return HttpResponse("Hello World")
+def index(req):
+    context = {
+
+    }
+    return render(req, "index.html", context=context)

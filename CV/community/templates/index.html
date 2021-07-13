@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css"/>
+    <title>직무 분석 결과 페이지</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+  />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <i class="far fa-building"></i>
+            <a href="">matching COMPANY</a>
+        </div>
+
+        <ul class="navbar__menu">
+            <li><a href="">자소서 분석</a></li>
+            <li><a href="">채용 정보</a></li>
+            <li><a href="">기업별 인재상</a></li>
+            <li><a href="">커뮤니티</a></li>
+        </ul>
+
+        <ul class="navbar__btn">
+            <li><input type="button" value="Sign in"></li>
+            <li><input type="button" value="Register"></li>
+        </ul>
+
+        <a href="#" class="navbar__toggleBtn">
+            <i class="fas fa-bars"></i>
+        </a>
+
+    </nav>
+
+    {% load static %}
+    <script src="{% static 'js/test.js' %}"}></script>
+</body>
+</html>
