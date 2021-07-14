@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    text-align: center;
 }
 
 a {
@@ -86,4 +87,36 @@ a {
     .navbar__toggleBtn {
         display: block;
     }
+}
+
+#tit{
+    margin-top: 50px;
+    color: #263343;
+}
+#strength-radio > * {
+    vertical-align: middle;
+}
+h3.info{
+    display: inline-block;
+    margin: 20px;
+}
+#strength-box{
+    display: inline-block;
+    padding: 40px 60px 40px 60px;
+    margin: 30px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #263343;
+}
+h6.info{
+    color: grey;
+}
+#analysis-btn{
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: mediumspringgreen;
+    border-color: mediumspringgreen;;
+    color: #263343;
+    border-radius: 5px;
 }
