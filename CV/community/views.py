@@ -8,3 +8,9 @@ def index(req):
 
     }
     return render(req, "index.html", context=context)
+
+def result(req):
+    context = {
+
+    }
+    return render(req, "result.html", context=context)

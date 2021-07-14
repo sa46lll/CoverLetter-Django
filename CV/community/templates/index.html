@@ -1,15 +1,13 @@
-<html>
+{% load static %}
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css"/>
-    <title>직무 분석 결과 페이지</title>
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
-  />
+    <link rel="stylesheet" href="{% static '/css/style.css' %}"/>
+    <title>자소서 입력 페이지</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
 </head>
 <body>
     <nav class="navbar">
@@ -33,10 +31,81 @@
         <a href="#" class="navbar__toggleBtn">
             <i class="fas fa-bars"></i>
         </a>
-
     </nav>
 
-    {% load static %}
-    <script src="{% static 'js/test.js' %}"}></script>
+    {% block contents %}
+    <h1 id="tit">내게 맞는 직무찾기</h1>
+    <h6 class="info">원하는 직무를 선택하세요</h6>
+    <select name="job">
+        <option value="">직무 선택</option>
+        <option value="">경영,사무</option>
+        <option value="">마케팅,광고,홍보</option>
+        <option value="">IT,인터넷</option>
+        <option value="">디자인</option>
+        <option value="">무역,유통</option>
+        <option value="">영업,고객상담</option>
+        <option value="">서비스</option>
+        <option value="">연구개발,설계</option>
+        <option value="">생산,제조</option>
+        <option value="">교육</option>
+        <option value="">건설</option>
+        <option value="">의료</option>
+        <option value="">미디어</option>
+        <option value="">전문,특수직</option>
+    </select>
+    <br>
+    <br>
+    <form method="">
+        <textarea id="letter-contents" rows="40" cols="100" placeholder="자기소개서를 입력하세요."></textarea>
+    </form>
+    <form id="strength-radio">
+        <h3 class="info">강점</h3>
+        <div id="strength-box">
+            <label>
+                <input type="radio" name="strength" value="">
+                비판적사고
+            </label>
+            <label>
+                <input type="radio" name="strength" value="">
+                전문성
+            </label>
+            <label>
+                <input type="radio" name="strength" value="">
+                도전정신
+            </label>
+            <label>
+                <input type="radio" name="strength" value="">
+                성취지향
+            </label>
+            <br>
+            <br>
+            <label>
+                <input type="radio" name="strength" value="">
+                의사소통
+            </label>
+            <label>
+                <input type="radio" name="strength" value="">
+                주도성
+            </label>
+            <label>
+                <input type="radio" name="strength" value="">
+                문제해결
+            </label>
+            <label>
+                <input type="radio" name="strength" value="">
+                치밀성
+            </label>
+        </div>
+    </form>
+    <div class="result-link">
+        <a href="{% url 'result' %}">
+            <input type="submit" value="분석하기" id="analysis-btn">
+        </a>
+    </div>
+    {% endblock %}
+
+    <!--<script src="{% static 'js/test.js' %}"></script>-->
+
+
 </body>
 </html>
