@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}"/>
     <title>직무 분석 결과 페이지</title>
 </head>
 <body>
     {% block contents %}
     <div class="content">
-        <h3>작성한 자기소개서</h2>
+        <h3 id="hi">작성한 자기소개서</h2>
         <form method="">
             <textarea id="letter-contents" rows="40" cols="100" placeholder="자기소개서를 입력하세요."></textarea>
         </form>

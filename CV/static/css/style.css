@@ -8,6 +8,7 @@ a {
     color: white;
 }
 
+/* 네비게이션바 */
 .navbar {
     display: flex; /*나란히*/
     justify-content: space-between; /*가운데 정렬*/
@@ -61,7 +62,8 @@ a {
     display: none;
 }
 
-@media screen and (max-width: 768px) { /*width 가 좁아질때*/
+/*width 가 좁아질때*/
+@media screen and (max-width: 768px) {
     .navbar{
         flex-direction: column;
         align-items: flex-start;
@@ -89,6 +91,7 @@ a {
     }
 }
 
+/* 자기소개서 작성페이지 */
 #tit{
     margin-top: 50px;
     color: #263343;
@@ -119,4 +122,14 @@ h6.info{
     border-color: mediumspringgreen;;
     color: #263343;
     border-radius: 5px;
+}
+
+/* 자기소개서 분석결과 페이지 */
+.content{
+    text-align: left;
+    color:blue;
+}
+
+#hi{
+    color: red;
 }
