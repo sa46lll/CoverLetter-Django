@@ -126,10 +126,45 @@ h6.info{
 
 /* 자기소개서 분석결과 페이지 */
 .content{
-    text-align: left;
-    color:blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.letter-contents{
+    display: absolute;
+    padding-top: 20px;
+    padding-left: 20px;
+    left: 50%;
+
 }
 
 #hi{
-    color: red;
+    text-align: left;
+    
+}
+
+#result{
+    padding-left: 30px;
+    text-align: left;
+}
+
+.Keyword{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.Keyword h3{
+    padding-left: 30px;
+}
+
+.Keyword div{
+    padding-left: 100px;
+}
+
+.Keyword div h4{
+    padding-left: 20px;
+    color:royalblue;
 }
