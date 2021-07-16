@@ -11,7 +11,7 @@
 <body>
     {% block contents %}
     <div class="content">
-        <h3 id="hi">작성한 자기소개서</h2>
+        <h3 id="hi">작성한 자기소개서</h3>
         <div class="letter-contents">
             <form method="">
                 <textarea id="letter-contents" rows="40" cols="100" placeholder="자기소개서를 입력하세요."></textarea>
@@ -38,6 +38,10 @@
             <!-- 워드클라우드 이미지 삽입하는 곳 -->
         </div>
     </div>
+
+    {% csrf_token %}
+    <h1>{{ post }}</h1>
+
 
     {% endblock %}
 </body>
