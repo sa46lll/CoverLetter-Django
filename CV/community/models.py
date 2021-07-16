@@ -3,7 +3,8 @@ from django.urls import reverse
 
 
 class Post(models.Model):
-    job = models.CharField(max_length=50)
+
+    job=models.CharField(max_length=50)
     letter = models.TextField()
 
     def __str__(self):
