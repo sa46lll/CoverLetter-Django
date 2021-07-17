@@ -15,8 +15,7 @@
         <div class="show-contents">
             <form method="">
                 {% csrf_token %}
-                <textarea id="show-contents" rows="40" cols="100" placeholder="자기소개서를 입력하세요.">{{ post }}
-                </textarea>
+                <textarea id="show-contents" rows="40" cols="100" placeholder="자기소개서를 입력하세요.">{{ post.letter }}</textarea>
             </form>
         </div>
     </div>

@@ -38,7 +38,8 @@
     {% block contents %}
     <h1 id="tit">내게 맞는 직무찾기</h1>
     <h6 class="info">원하는 직무를 선택하세요</h6>
-    <form id="analysis-contents" method="POST">
+    <form action="{% url 'result' %}" id="analysis-contents" method="POST">
+        {% csrf_token %}
         <select name="job" id="job">
             <option value="a">직무 선택</option>
             <option value="b">경영,사무</option>
@@ -58,51 +59,56 @@
         </select>
         <br>
         <br>
-        <textarea name="letter" id="letter-contents" rows="40" cols="100" placeholder="자기소개서를 입력하세요."></textarea>
+{#        <textarea name="letter" id="letter-contents" rows="40" cols="100" placeholder="자기소개서를 입력하세요."></textarea>#}
+        {{ form.as_p }}
+        <h3 class="info">강점</h3>
+        <div id="strength-box">
+            <label>
+                <input type="radio" name="strength" value="">
+                비판적사고
+            </label>
+            <label>
+                <input type="radio" name="strength" value="">
+                전문성
+            </label>
+            <label>
+                <input type="radio" name="strength" value="">
+                도전정신
+            </label>
+            <label>
+                <input type="radio" name="strength" value="">
+                성취지향
+            </label>
+            <br>
+            <br>
+            <label>
+                <input type="radio" name="strength" value="">
+                의사소통
+            </label>
+            <label>
+                <input type="radio" name="strength" value="">
+                주도성
+            </label>
+            <label>
+                <input type="radio" name="strength" value="">
+                문제해결
+            </label>
+            <label>
+                <input type="radio" name="strength" value="">
+                치밀성
+            </label>
+        </div>
+        <div id="analysis-contents" class="result-link">
+            <a href="{% url 'result' %}">
+                <input type="submit" value="분석하기" id="analysis-btn">분석하기</input>
+            </a>
+        </div>
     </form>
-
-    <h3 class="info">강점</h3>
-    <div id="strength-box">
-        <label>
-            <input type="radio" name="strength" value="">
-            비판적사고
-        </label>
-        <label>
-            <input type="radio" name="strength" value="">
-            전문성
-        </label>
-        <label>
-            <input type="radio" name="strength" value="">
-            도전정신
-        </label>
-        <label>
-            <input type="radio" name="strength" value="">
-            성취지향
-        </label>
-        <br>
-        <br>
-        <label>
-            <input type="radio" name="strength" value="">
-            의사소통
-        </label>
-        <label>
-            <input type="radio" name="strength" value="">
-            주도성
-        </label>
-        <label>
-            <input type="radio" name="strength" value="">
-            문제해결
-        </label>
-        <label>
-            <input type="radio" name="strength" value="">
-            치밀성
-        </label>
-    </div>
-    <div class="result-link">
-        <a href="{% url 'result' %}">
-            <input type="submit" value="분석하기" id="analysis-btn">
-        </a>
-    </div>
+{#    <div id="analysis-contents" class="result-link">#}
+{#        <a href="{% url 'result' %}">#}
+{#        <input type="submit" value="분석하기" id="analysis-btn">분석하기</input>#}
+{#        </a>#}
+{#    </div>#}
 
     {% endblock %}
 

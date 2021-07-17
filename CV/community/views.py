@@ -1,24 +1,35 @@
-from django.http import request
+
 from django.shortcuts import redirect, render
-from community.models import Post
+
+from community.forms import CVForm
+from community.models import CV
 
 # Create your views here.
 
 
 def index(req):
-    context = {
+    form = CVForm()
 
-    }
-    return render(req, "index.html", context=context)
+    return render(req, "index.html", {"form": form})
+
+# def result(req):
+#     if if req.method == 'POST':
 
 
-def post(req):
+def post_result(req):
     if req.method == 'POST':
-        post = Post()
-        post.letter = request.POST['letter']
-        post.job = request.POST['job']
-        post.save()
-        return redirect('post')
-    else:
-        post = Post.objects.all()
-        return render(req, 'result.html', {"post": post})
+        form = CVForm(req.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.ip = req.META['REMOTE_ADDR']
+            post.save()
+            # return redirect('posts:index')
+        else:
+            # form = Form()
+            post = CV.objects.all()
+        context = {
+            'post': post
+        }
+        post = CV.objects.all()
+        return render(req, 'result.html', context=context)
+        # return redirect('posts:result')
