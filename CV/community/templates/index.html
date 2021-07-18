@@ -37,78 +37,13 @@
     <!-- 자기소개서 작성란 -->
     {% block contents %}
     <h1 id="tit">내게 맞는 직무찾기</h1>
-    <h6 class="info">원하는 직무를 선택하세요</h6>
     <form action="{% url 'result' %}" id="analysis-contents" method="POST">
+        <h3 id="info1">원하는 직무를 선택하세요</h3>
         {% csrf_token %}
-        <select name="job" id="job">
-            <option value="a">직무 선택</option>
-            <option value="b">경영,사무</option>
-            <option value="c">마케팅,광고,홍보</option>
-            <option value="d">IT,인터넷</option>
-            <option value="e">디자인</option>
-            <option value="f">무역,유통</option>
-            <option value="g">영업,고객상담</option>
-            <option value="h">서비스</option>
-            <option value="i">연구개발,설계</option>
-            <option value="j">생산,제조</option>
-            <option value="k">교육</option>
-            <option value="l">건설</option>
-            <option value="m">의료</option>
-            <option value="n">미디어</option>
-            <option value="o">전문,특수직</option>
-        </select>
-        <br>
-        <br>
-{#        <textarea name="letter" id="letter-contents" rows="40" cols="100" placeholder="자기소개서를 입력하세요."></textarea>#}
         {{ form.as_p }}
-        <h3 class="info">강점</h3>
-        <div id="strength-box">
-            <label>
-                <input type="radio" name="strength" value="">
-                비판적사고
-            </label>
-            <label>
-                <input type="radio" name="strength" value="">
-                전문성
-            </label>
-            <label>
-                <input type="radio" name="strength" value="">
-                도전정신
-            </label>
-            <label>
-                <input type="radio" name="strength" value="">
-                성취지향
-            </label>
-            <br>
-            <br>
-            <label>
-                <input type="radio" name="strength" value="">
-                의사소통
-            </label>
-            <label>
-                <input type="radio" name="strength" value="">
-                주도성
-            </label>
-            <label>
-                <input type="radio" name="strength" value="">
-                문제해결
-            </label>
-            <label>
-                <input type="radio" name="strength" value="">
-                치밀성
-            </label>
-        </div>
-        <div id="analysis-contents" class="result-link">
-            <a href="{% url 'result' %}">
-                <input type="submit" value="분석하기" id="analysis-btn">분석하기</input>
-            </a>
-        </div>
+
+        <input type="submit" value="분석하기" id="analysis-btn"></input>
     </form>
-{#    <div id="analysis-contents" class="result-link">#}
-{#        <a href="{% url 'result' %}">#}
-{#        <input type="submit" value="분석하기" id="analysis-btn">분석하기</input>#}
-{#        </a>#}
-{#    </div>#}
 
     {% endblock %}
 

@@ -11,22 +11,24 @@
 <body>
     {% block contents %}
     <div class="content">
-        <h3 id="hi">작성한 자기소개서</h3>
+        <h3 id="info3">작성한 자기소개서</h3>
         <div class="show-contents">
             <form method="">
-                {% csrf_token %}
+{#                {% csrf_token %}#}
+{#                <textarea id="show-contents" rows="40" cols="100" placeholder="자기소개서를 입력하세요.">{{ post.letter }}</textarea>#}
                 <textarea id="show-contents" rows="40" cols="100" placeholder="자기소개서를 입력하세요.">{{ post.letter }}</textarea>
+
             </form>
         </div>
     </div>
 
     <!-- 자기소개서 분석 결과 -->
-    <h2 id="result">분석결과</h2>
+    <h2 id="info4">분석결과</h2>
     <div class="Keyword">
-        <h3>강조한 키워드</h3>
-        <div>
+        <h3 id="info5">강조한 키워드</h3>
+        <div id="Keyword_text">
             <h4># 빈도 순위</h4>
-            <ol class="keyword_result">
+            <ol>
                 <li></li>
                 <li></li>
                 <li></li>
@@ -34,8 +36,8 @@
                 <li></li>
             </ol>
         </div>
-        <div>
-            이미지
+        <div class="Keyword_image">
+            <h4>이미지</h4>
             <!-- 워드클라우드 이미지 삽입하는 곳 -->
         </div>
     </div>
