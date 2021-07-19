@@ -1,5 +1,6 @@
 {% extends "index.html" %}
 {% load static %}
+{% load data_analysis %}
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
@@ -29,7 +30,7 @@
         <div id="Keyword_text">
             <h4># 빈도 순위</h4>
             <ol>
-                <li></li>
+                <li>{{ post.letter|top_1 }}</li>
                 <li></li>
                 <li></li>
                 <li></li>
@@ -39,6 +40,7 @@
         <div class="Keyword_image">
             <h4>이미지</h4>
             <!-- 워드클라우드 이미지 삽입하는 곳 -->
+{#            make_wordcloud({{post.letter}})#}
         </div>
     </div>
 
