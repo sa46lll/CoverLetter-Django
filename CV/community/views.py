@@ -1,22 +1,27 @@
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from .models import Post
+
+from community.forms import PostForm
+from community.models import CV
 
 
 # Create your views here.
-#def index(req):
-#    context = {
-#
-#    }
-#    return render(req, "index.html", context=context)
+def index(req):
+    form = PostForm()
 
-def post(request):
-    if request.method=='POST':
-        post=Post()
-        post.letter=request.POST['letter']
-        post.job = request.POST['job']
-        post.save()
-        return redirect('post')
-    else:
-        post=Post.objects.all()
-        return render(request, 'index.html', {'post':post})
+    return render(req, "index.html", {"form": form})
+
+
+def post_result(req):
+    if req.method == 'POST':
+        form = PostForm(req.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.ip = req.META['REMOTE_ADDR']
+            post.save()
+            # return redirect('posts')
+        else:
+            post = CV.objects.all()
+        context = {
+            'post': post
+        }
+        return render(req, 'result.html', context=context)

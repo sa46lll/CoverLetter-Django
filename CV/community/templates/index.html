@@ -1,17 +1,17 @@
-<html>
+{% load static %}
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../static/css/style.css"/>
-    <title>직무 분석 결과 페이지</title>
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
-  />
+
+    <link rel="stylesheet" href="{% static '/css/style.css' %}"/>
+    <title>자소서 입력 페이지</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
 </head>
 <body>
+    <!-- 상단 네비게이션바 -->
     <nav class="navbar">
         <div class="navbar__logo">
             <i class="far fa-building"></i>
@@ -33,76 +33,20 @@
         <a href="#" class="navbar__toggleBtn">
             <i class="fas fa-bars"></i>
         </a>
-
     </nav>
-
+    
+    <!-- 자기소개서 작성란 -->
+    {% block contents %}
     <h1 id="tit">내게 맞는 직무찾기</h1>
-    <form id="analysis-contents" method="POST">
+    <form action="{% url 'result' %}" id="analysis-contents" method="POST">
+        <h3 id="info1">원하는 직무를 선택하세요</h3>
         {% csrf_token %}
-        <h6 class="info">원하는 직무를 선택하세요</h6>
-        <select name="job" id="job">
-            <option value="a">직무 선택</option>
-            <option value="b">경영,사무</option>
-            <option value="c">마케팅,광고,홍보</option>
-            <option value="d">IT,인터넷</option>
-            <option value="e">디자인</option>
-            <option value="f">무역,유통</option>
-            <option value="g">영업,고객상담</option>
-            <option value="h">서비스</option>
-            <option value="i">연구개발,설계</option>
-            <option value="j">생산,제조</option>
-            <option value="k">교육</option>
-            <option value="l">건설</option>
-            <option value="m">의료</option>
-            <option value="n">미디어</option>
-            <option value="o">전문,특수직</option>
-        </select>
-        <br>
-        <br>
-        <textarea name="letter" id="letter-contents" rows="40" cols="100" placeholder="자기소개서를 입력하세요."></textarea>
-        <div id="strength-radio">
-            <h3 class="info">강점</h3>
-            <div id="strength-box">
-                <label>
-                    <input type="radio" name="strength" value="0">
-                    비판적사고
-                </label>
-                <label>
-                    <input type="radio" name="strength" value="1">
-                    전문성
-                </label>
-                <label>
-                    <input type="radio" name="strength" value="2">
-                    도전정신
-                </label>
-                <label>
-                    <input type="radio" name="strength" value="3">
-                    성취지향
-                </label>
-                <br>
-                <br>
-                <label>
-                    <input type="radio" name="strength" value="4">
-                    의사소통
-                </label>
-                <label>
-                    <input type="radio" name="strength" value="5">
-                    주도성
-                </label>
-                <label>
-                    <input type="radio" name="strength" value="6">
-                    문제해결
-                </label>
-                <label>
-                    <input type="radio" name="strength" value="7">
-                    치밀성
-                </label>
-            </div>
-        </div>
-        <input type="submit" value="분석하기" id="analysis-btn">
+        {{ form.as_p }}
+
+        <input type="submit" value="분석하기" id="analysis-btn"></input>
     </form>
-    <h2>{{ post }}</h2> <!-- 저장된 데이터 확인을 위한 코드 -->
-    {% load static %}
-    <script src="{% static 'js/test.js' %}"}></script>
+
+    {% endblock %}
+
 </body>
 </html>

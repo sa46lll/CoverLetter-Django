@@ -8,6 +8,7 @@ a {
     color: white;
 }
 
+/* 네비게이션바 */
 .navbar {
     display: flex; /*나란히*/
     justify-content: space-between; /*가운데 정렬*/
@@ -61,7 +62,8 @@ a {
     display: none;
 }
 
-@media screen and (max-width: 768px) { /*width 가 좁아질때*/
+/*width 가 좁아질때*/
+@media screen and (max-width: 768px) {
     .navbar{
         flex-direction: column;
         align-items: flex-start;
@@ -93,30 +95,66 @@ a {
     margin-top: 50px;
     color: #263343;
 }
-#strength-radio > * {
+
+#analysis-contents{
+    display: inline-block;
     vertical-align: middle;
+    text-decoration: none;
 }
-h3.info{
-    display: inline-block;
-    margin: 20px;
-}
-#strength-box{
-    display: inline-block;
-    padding: 40px 60px 40px 60px;
-    margin: 30px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #263343;
-}
-h6.info{
-    color: grey;
-}
+
 #analysis-btn{
-    margin: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    margin-top: 20px;
+    padding: 10px 15px;
     background-color: mediumspringgreen;
     border-color: mediumspringgreen;;
-    color: #263343;
+    font-weight: bold;
     border-radius: 5px;
+}
+
+/* 자기소개서 분석결과 페이지 */
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#show-contents{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.Keyword{
+    display: flex;
+}
+
+#info5{
+    position: absolute;
+    left: 20%;
+}
+
+#Keyword_text{
+    position: absolute;
+    left: 40%;
+}
+
+#Keyword_text h4 {
+    color: royalblue;
+}
+
+.Keyword_image{
+    position: absolute;
+    left: 60%;
+}
+
+.job{
+    color: red;
+}
+
+.letter{
+    font-size: 15px;
+}
+
+.strength{
+    color: deeppink;
+    text-decoration: none;
 }
