@@ -118,43 +118,79 @@ a {
     justify-content: center;
 }
 
-#show-contents{
+.content > h3{
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.content > div{
+    font-size: 15px;
     margin-top: 20px;
     margin-left: 20px;
 }
 
-.Keyword{
+.content > div > form > textarea{
+    padding: 20px;
+}
+
+#info4{
+    font-size: 25px;
+    text-align: left;
+    margin-top: 80px;
+    margin-left: 10%;
+}
+
+.resultSection{
+    display: inline-block;
+    width: 80%;
+    margin-top: 20px;
+    /*text-align: match-parent;*/
+    /*margin-left: 100px;*/
+    /*margin-right: 100px;*/
+    background: rgba(200, 207, 255, 0.44);
+    border-radius: 20px;
+}
+
+.resultSection > h3 {
+    text-align: left;
+    margin-left: 40px;
+    padding: 30px;
+}
+
+.keyword {
     display: flex;
+    justify-content: flex-end; /*가운데 정렬*/
+    /*align-items: end;*/
 }
 
-#info5{
-    position: absolute;
-    left: 20%;
+.keyword > div {
+    display: block;
+
 }
 
-#Keyword_text{
-    position: absolute;
-    left: 40%;
+ol.toplist li {
+    padding: 5px 0px 5px 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #efefef;
+    font-size: 12px;
 }
 
-#Keyword_text h4 {
-    color: royalblue;
+.resultSection > div > img {
+    margin-left: 100px;
+    margin-right: 50px;
+    width: 400px;
+    height: 300px;
 }
 
-.Keyword_image{
-    position: absolute;
-    left: 60%;
-}
+/*.job{*/
+/*    color: red;*/
+/*}*/
 
-.job{
-    color: red;
-}
+/*.letter{*/
+/*    font-size: 15px;*/
+/*}*/
 
-.letter{
-    font-size: 15px;
-}
-
-.strength{
-    color: deeppink;
-    text-decoration: none;
-}
+/*.strength{*/
+/*    color: deeppink;*/
+/*    text-decoration: none;*/
+/*}*/

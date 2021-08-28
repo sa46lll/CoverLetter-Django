@@ -5,41 +5,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static '/css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static '/css/style.css?after' %}"/>
     <title>직무 분석 결과 페이지</title>
 </head>
 <body>
     {% block contents %}
     <div class="content">
-        <h3 id="info3">작성한 자기소개서</h3>
-        <div class="show-contents">
+        <h3>작성한 자기소개서</h3>
+        <div>
             <form method="">
-{#                {% csrf_token %}#}
-{#                <textarea id="show-contents" rows="40" cols="100" placeholder="자기소개서를 입력하세요.">{{ post.letter }}</textarea>#}
                 <textarea id="show-contents" rows="40" cols="100" placeholder="자기소개서를 입력하세요.">{{ post.letter }}</textarea>
-
             </form>
         </div>
     </div>
 
     <!-- 자기소개서 분석 결과 -->
     <h2 id="info4">분석결과</h2>
-    <div class="Keyword">
-        <h3 id="info5">강조한 키워드</h3>
-        <div id="Keyword_text">
-            <h4># 빈도 순위</h4>
-            <ol>
-                <li>{{ top1 }}</li>
-                <li>{{ top2 }}</li>
-                <li>{{ top3 }}</li>
-                <li>{{ top4 }}</li>
-                <li>{{ top5 }}</li>
-            </ol>
-        </div>
-        <div class="Keyword_image">
-            <h4>이미지</h4>
+    <div class="resultSection">
+{#        <div class="keyword">#}
+        <h3>강조한 키워드</h3>
+        <div class="keyword">
+            <div>
+                <h4># 빈도 순위</h4>
+                <ol class="toplist">
+                    <li>{{ top1 }}</li>
+                    <li>{{ top2 }}</li>
+                    <li>{{ top3 }}</li>
+                    <li>{{ top4 }}</li>
+                    <li>{{ top5 }}</li>
+                </ol>
+            </div>
             <!-- 워드클라우드 이미지 삽입하는 곳 -->
+            <img src="{{ wordcloud }}">
         </div>
+{#        </div>#}
     </div>
 
     {% endblock %}
